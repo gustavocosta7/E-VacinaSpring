@@ -14,9 +14,43 @@ public class AdminController {
     private AtendenteRepository ar;
 
 
+    //Mapaeamento de rotas
+    @RequestMapping(value ="/admin_index", method = RequestMethod.GET)
+    public String adminIndex(){
+        return "admin/admin_index";
+    }
+
+
     @RequestMapping(value ="/aten_cadastrar", method = RequestMethod.GET)
     public String cadastraAtendente(){
         return "admin/atendente_cadastrar";
+    }
+
+    @RequestMapping(value ="/pac_listar", method = RequestMethod.GET)
+    public String pacienteListar(){
+        return "admin/paciente_listar";
+    }
+
+    @RequestMapping(value ="/pac_cadastrar", method = RequestMethod.GET)
+    public String pacienteCadastrar(){
+        return "admin/paciente_cadastrar";
+    }
+
+
+    @RequestMapping(value ="/vac_listar", method = RequestMethod.GET)
+    public String listarVacinas(){
+        return "admin/vacina_listar";
+    }
+
+
+    @RequestMapping(value ="/local_listar", method = RequestMethod.GET)
+    public String listarLocais(){
+        return "admin/local_listar";
+    }
+
+    @RequestMapping(value ="/sair", method = RequestMethod.GET)
+    public String sair(){
+        return "index";
     }
 
     @RequestMapping(value ="/aten_cadastrar", method = RequestMethod.POST)
@@ -25,5 +59,7 @@ public class AdminController {
 
         return "redirect:admin/atendente_cadastrar";
     }
+
+
 
 }

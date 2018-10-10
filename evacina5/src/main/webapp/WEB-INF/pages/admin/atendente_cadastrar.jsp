@@ -38,7 +38,7 @@
                 <img src="../../../resources/static/img/logo-topo.png"  alt="">
             </a>
 
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="collapse navbar-collapse" id="">
                 <ul class="navbar-nav ml-auto">
                     <h4 class="text-light">
                         Console de Administração
@@ -48,7 +48,7 @@
 
 
 
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="collapse navbar-collapse" id="">
                 <ul class="navbar-nav ml-auto">
 
                     <li class="nav-item">
@@ -85,34 +85,34 @@
 
                         <ul class="nav flex-column">
                             <li class="nav-item">
-                                <a class="nav-link active text-secondary" href="#">
+                                <a class="nav-link active text-secondary" href="/admin_index">
                                     <i class="fas fa-home"></i>
                                     &nbspInício <span class="sr-only">(current)</span>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-secondary" href="adm-usuarios-listar.html">
+                                <a class="nav-link text-secondary" href="/pac_listar">
                                     <i class="fas fa-users"></i>
                                     Pacientes
                                 </a>
                             <li class="nav-item">
-                                <a class="nav-link text-secondary" href="adm-cliente-listar.html">
+                                <a class="nav-link text-secondary" href="/vac_listar">
                                     <i class="fas fa-syringe"></i>
                                     &nbspVacinas
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-secondary" href="adm-cliente-listar.html">
+                                <a class="nav-link text-secondary" href="/local_listar">
                                     <i class="far fa-hospital"></i>
                                     &nbspLocais de Vacina
                                 </a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-secondary" href="#">
-                                    <i class="fas fa-chart-line"></i>
-                                    Estatísticas
-                                </a>
-                            </li>
+                            <%--<li class="nav-item">--%>
+                                <%--<a class="nav-link text-secondary" href="#">--%>
+                                    <%--<i class="fas fa-chart-line"></i>--%>
+                                    <%--Estatísticas--%>
+                                <%--</a>--%>
+                            <%--</li>--%>
                             <li class="nav-item">
                                 <a class="nav-link text-secondary" href="#">
                                     <i class="fas fa-user-circle"></i>
@@ -120,7 +120,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-secondary" href="#">
+                                <a class="nav-link text-secondary" href="/sair">
                                     <i class="fas fa-sign-out-alt"></i>
                                     Sair
                                 </a>

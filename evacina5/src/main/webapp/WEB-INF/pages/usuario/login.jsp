@@ -51,14 +51,14 @@
 
     <div class="container padding-top">
 
-      <form class="form-signin">
+      <form class="form-signin" action="/validaLogin" method="post">
         <p align="center"><img src="../../../resources/static/img/logo-100.png"><p>
 
-            <label for="inputEmail" class="sr-only">Matrícula</label>
-        <input type="email" id="inputEmail" class="form-control" placeholder="Matrícula" required autofocus>
+         <label for="inputEmail" class="sr-only">Matrícula</label>
+        <input name="tfMatricula" type="text" id="inputEmail" class="form-control" placeholder="Matrícula" required autofocus>
         <br>
         <label for="inputPassword" class="sr-only">Senha</label>
-        <input type="password" id="inputPassword" class="form-control" placeholder="Senha" required>
+        <input name="tfSenha" type="password" id="inputPassword" class="form-control" placeholder="Senha" required>
         <%--<div class="checkbox">--%>
           <%--<label>--%>
             <%--<input type="checkbox" value="remember-me"> Lembrar-me--%>
