@@ -114,7 +114,7 @@
                                 <%--</a>--%>
                             <%--</li>--%>
                             <li class="nav-item">
-                                <a class="nav-link text-secondary" href="#">
+                                <a class="nav-link text-secondary" href="/aten_listar">
                                     <i class="fas fa-user-circle"></i>
                                     Usuários
                                 </a>
@@ -168,13 +168,6 @@
 
 
                 </main>
-
-
-
-
-
-
-
 
             </div>
         </div>

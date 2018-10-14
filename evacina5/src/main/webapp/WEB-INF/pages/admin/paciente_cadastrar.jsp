@@ -143,26 +143,42 @@
 
                     <div>
 
-                        <form method="post" action="cadastrarPaciente">
+                        <form method="post" action="">
 
                             <div class="form-group">
                                 <label>Nome do Paciente</label>
-                                <input type="text" class="form-control" placeholder="Nome do Paciente">
+                                <input type="text" class="form-control" placeholder="Nome do Paciente" name="nome">
                             </div>
 
                             <div class="form-group">
                                 <label>Nº da Carteirinha do SUS</label>
-                                <input type="text" class="form-control" placeholder="Nº da Carteirinha do SUS">
+                                <input type="text" class="form-control" placeholder="Nº da Carteirinha do SUS" name="sus">
                             </div>
+                            <fieldset>
+                                <legend>Sexo</legend>
+                                <%--FORM CHECK--%>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="sexo" id="Feminino" value="f" checked>
+                                    <label class="form-check-label" for="Feminino">
+                                        Feminino
+                                    </label>
+                                    <br>
+                                    <input class="form-check-input" type="radio" name="sexo" id="Masculino" value="m">
+                                    <label class="form-check-label" for="Masculino">
+                                        Masculino
+                                    </label>
+                                    <br>
+                                    <input class="form-check-input" type="radio" name="sexo" id="Semopcao" value="i">
+                                    <label class="form-check-label" for="Semopcao">
+                                        Sem opção
+                                    </label>
+                                </div>
+                            </fieldset>
 
-                            <div class="form-group">
-                                <label>Sexo</label>
-                                <input type="text" class="form-control" placeholder="Sexo">
-                            </div>
-
+                            <br>
                             <div class="form-group">
                                 <label>Data de Nascimento</label>
-                                <input type="text" class="form-control" placeholder="Data de Nascimento">
+                                <input type="date" class="form-control" name="nascimento" placeholder="Data de Nascimento">
                             </div>
 
 

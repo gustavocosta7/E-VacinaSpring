@@ -108,7 +108,7 @@
                     <%--</a>--%>
                     <%--</li>--%>
                     <li class="nav-item">
-                        <a class="nav-link text-secondary" href="/aten_cadastrar">
+                        <a class="nav-link text-secondary" href="/aten_listar">
                             <i class="fas fa-user-circle"></i>
                             Usuários
                         </a>
@@ -124,9 +124,6 @@
         </nav>
         <!--MENU LATERAL FIM -->
 
-
-
-
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
           <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
             <h1 class="h2">Locais</h1>
@@ -139,7 +136,7 @@
                  <button class="btn my-2 btn-outline-secondary my-sm-0" type="submit"><i class="fas fa-search"></i></button>
                  <span>&nbsp</span>
                  
-                <a class="btn btn-sm btn-outline-secondary" href="adm-postagens-cadastrar.html">Novo Local</a>
+                <a class="btn btn-sm btn-outline-secondary" href="/local_cad">Novo Local</a>
                 
               </div>
             </div>

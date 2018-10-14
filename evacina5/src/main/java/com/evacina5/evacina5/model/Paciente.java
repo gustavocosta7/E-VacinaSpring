@@ -1,9 +1,8 @@
 package com.evacina5.evacina5.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import org.springframework.format.annotation.DateTimeFormat;
+
+import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Calendar;
 
@@ -15,52 +14,51 @@ public class Paciente implements Serializable {
 
     @Id
     @GeneratedValue
-    private long pacnsus;
-
-    private String pacnome;
-    private char pacsexo;
-    private Calendar pacdtnascimento;
+    private long sus;
+    private String nome;
+    private char sexo;
+    private String nascimento;
 
 
     public Paciente() {
 
     }
 
-    public Paciente(String pacnome, char pacsexo, Calendar pacdtnascimento) {
-        this.pacnome = pacnome;
-        this.pacsexo = pacsexo;
-        this.pacdtnascimento = pacdtnascimento;
+    public Paciente(String nome, char sexo, String nascimento) {
+        this.nome = nome;
+        this.sexo = sexo;
+        this.nascimento = nascimento;
     }
 
-    public long getPacnsus() {
-        return pacnsus;
+    public long getSus() {
+        return sus;
     }
 
-    public void setPacnsus(long pacnsus) {
-        this.pacnsus = pacnsus;
+    public void setSus(long sus) {
+        this.sus = sus;
     }
 
-    public String getPacnome() {
-        return pacnome;
+    public String getNome() {
+        return nome;
     }
 
-    public void setPacnome(String pacnome) {
-        this.pacnome = pacnome;
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
-    public char getPacsexo() {
-        return pacsexo;
+    public char getSexo() {
+        return sexo;
     }
 
-    public void setPacsexo(char pacsexo) {
-        this.pacsexo = pacsexo;
+    public void setSexo(char sexo) {
+        this.sexo = sexo;
     }
 
-    public Calendar getPacdtnascimento() {
-        return pacdtnascimento;
+    public String getNascimento() {
+        return nascimento;
     }
 
-    public void setPacdtnascimento(Calendar pacdtnascimento) {
-        this.pacdtnascimento = pacdtnascimento;
+    public void setNascimento(String nascimento) {
+        this.nascimento = nascimento;
     }
 }

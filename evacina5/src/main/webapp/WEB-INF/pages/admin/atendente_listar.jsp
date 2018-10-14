@@ -1,6 +1,6 @@
 <%-- 
-    Document   : adm-vacinas-listar
-    Created on : 15/09/2018, 20:10:37
+    Document   : adm-usuario-listar
+    Created on : 15/09/2018, 20:01:17
     Author     : gustav0
 --%>
 
@@ -25,7 +25,6 @@
 
 
 </head>
-
 <body>
 
 <nav class="navbar navbar-expand-lg navbar-white bg-primary">
@@ -114,7 +113,7 @@
                     <%--</a>--%>
                     <%--</li>--%>
                     <li class="nav-item">
-                        <a class="nav-link text-secondary" href="/aten_cadastrar">
+                        <a class="nav-link text-secondary" href="/aten_listar">
                             <i class="fas fa-user-circle"></i>
                             Usuários
                         </a>
@@ -132,10 +131,9 @@
 
 
 
-
-        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+                <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
                     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-                        <h1 class="h2">Vacinas</h1>
+                        <h1 class="h2">Usuarios</h1>
                         <div class="btn-toolbar mb-2 mb-md-0">
                             <div class="btn-group mr-2">
 
@@ -145,8 +143,8 @@
                                 <button class="btn my-2 btn-outline-secondary my-sm-0" type="submit"><i class="fas fa-search"></i></button>
                                 <span>&nbsp</span>
 
+                                <a class="btn btn-sm btn-outline-secondary" href="/aten_cadastrar">Novo Usuário</a>
 
-                                <a class="btn btn-sm btn-outline-secondary" href="/vac_cadastrar">Nova Vacina</a>
                             </div>
                         </div>
                     </div>
@@ -157,8 +155,9 @@
                                 <thead>
                                     <tr>
                                         <th>ID</th>
-                                        <th>Nome da Vacina</th>
-                                        <th>Descrição</th>
+                                        <th>Nome do Usuario</th>
+                                        <th>Matricula</th>
+                                        <th>Senha</th>
                                         <th>Funções</th>
                                     </tr>
                                 </thead>
@@ -166,45 +165,15 @@
 
                                     <tr>
                                         <td>1</td>
-                                        <td>BCG</td>
-                                        <td>Previne as formas graves de tuberculose, principalmente miliar e meníngea.</td>
+                                        <td>Fernando Gurgel</td>
+                                        <td>000696969</td>
+                                        <td>**********</td>
                                         <td>
                                             <button type="button" class="btn btn-outline-info btn-sm"><i class="fas fa-edit"></i></button>
                                             <button type="button" class="btn btn-outline-danger btn-sm"><i class="fas fa-trash-alt"></i></button>
                                         </td>
                                     </tr>
 
-
-
-                                    <tr>
-                                        <td>2</td>
-                                        <td>Pentavalente</td>
-                                        <td>Previne difteria, tétano, coqueluche, hepatite B e meningite e infecções por HiB</td>
-                                        <td>
-                                            <button type="button" class="btn btn-outline-info btn-sm"><i class="fas fa-edit"></i></button>
-                                            <button type="button" class="btn btn-outline-danger btn-sm"><i class="fas fa-trash-alt"></i></button>
-                                        </td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>3</td>
-                                        <td>Rotavírus</td>
-                                        <td>Previne diarreia por rotavírus.</td>
-                                        <td>
-                                            <button type="button" class="btn btn-outline-info btn-sm"><i class="fas fa-edit"></i></button>
-                                            <button type="button" class="btn btn-outline-danger btn-sm"><i class="fas fa-trash-alt"></i></button>
-                                        </td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>4</td>
-                                        <td>Tríplice viral</td>
-                                        <td>Previne sarampo, caxumba e rubéola.</td>
-                                        <td>
-                                            <button type="button" class="btn btn-outline-info btn-sm"><i class="fas fa-edit"></i></button>
-                                            <button type="button" class="btn btn-outline-danger btn-sm"><i class="fas fa-trash-alt"></i></button>
-                                        </td>
-                                    </tr>
 
                                 </tbody>
                             </table>
@@ -216,22 +185,15 @@
                 </main>
 
 
-
-
-
-
-
-
             </div>
         </div>
 
 
-
-        <!--JAVASCRIPT PATH INICIO -->
-        <script src="../../../resources/static/js/jquery.js"></script>
-        <script src="../../../resources/static/js/bootstrap.min.js"></script>
-        <script src="../../../resources/static/js/upload-img-exibir.js"></script>
-        <script defer src="../../../resources/static/js/fontawesome-all.js"></script>
-        <!--JAVASCRIPT PATH FIM -->
+    <!--JAVASCRIPT PATH INICIO -->
+    <script src="../../../resources/static/js/jquery.js"></script>
+    <script src="../../../resources/static/js/bootstrap.min.js"></script>
+    <script src="../../../resources/static/js/upload-img-exibir.js"></script>
+    <script defer src="../../../resources/static/js/fontawesome-all.js"></script>
+    <!--JAVASCRIPT PATH FIM -->
     </body>
 </html>

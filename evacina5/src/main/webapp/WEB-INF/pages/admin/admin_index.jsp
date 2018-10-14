@@ -114,7 +114,7 @@
                     <%--</a>--%>
                     <%--</li>--%>
                     <li class="nav-item">
-                        <a class="nav-link text-secondary" href="/aten_cadastrar">
+                        <a class="nav-link text-secondary" href="/aten_listar">
                             <i class="fas fa-user-circle"></i>
                             Usuários
                         </a>
@@ -129,8 +129,6 @@
             </div>
         </nav>
         <!--MENU LATERAL FIM -->
-
-
 
 
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
