@@ -137,15 +137,6 @@
                         <div class="btn-toolbar mb-2 mb-md-0">
                             <div class="btn-group mr-2">
                             </div>
-
-
-
-
-
-
-
-
-
                         </div>
                     </div>
 

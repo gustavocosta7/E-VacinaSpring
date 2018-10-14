@@ -143,27 +143,27 @@
 
                     <div>
 
-                        <form method="post" action="cadastrarLocal">
+                        <form method="post" action="">
 
                             <div class="form-group">
                                 <label>Nome do Local</label>
-                                <input type="text" class="form-control" placeholder="Nome do Local">
+                                <input type="text" class="form-control" placeholder="Nome do Local" name="nome">
                             </div>
 
 
                             <div class="form-group">
                                 <label>Cidade</label>
-                                <input type="text" class="form-control" placeholder="Cidade">
+                                <input type="text" class="form-control" placeholder="Cidade" name="cidade">
                             </div>
 
                             <div class="form-group">
                                 <label>UF</label>
-                                <input type="text" class="form-control" placeholder="UF">
+                                <input type="text" class="form-control" placeholder="UF" name="uf">
                             </div>
 
 
                             <button type="submit" class="btn btn-outline-primary">Cadastrar</button>
-                            <a class="btn btn-outline-primary" href="adm-postagens-listar.html">Voltar</a>
+                            <a class="btn btn-outline-primary" href="/local_listar">Voltar</a>
                         </form>
                     </div>
 

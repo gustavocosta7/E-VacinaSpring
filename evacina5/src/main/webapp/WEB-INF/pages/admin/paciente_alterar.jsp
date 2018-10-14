@@ -1,18 +1,22 @@
 <%-- 
-    Document   : adm-paciente-cadastrar
-    Created on : 15/09/2018, 19:53:40
+    Document   : adm-paciente-alterar
+    Created on : 15/09/2018, 18:09:46
     Author     : gustav0
 --%>
 
+<%@page import="com.evacina5.evacina5.util.DataUtil"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/functions" prefix = "fn" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%--<%@taglib prefix="s" uri="/struts-tags" %>--%>
 <!DOCTYPE html>
 <html>
-<head>
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE-edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <head>
+
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE-edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="icon" href="../../../resources/static/img/logo-p.png">
     <title>E-Vacina</title>
@@ -107,14 +111,8 @@
                             &nbspLocais de Vacina
                         </a>
                     </li>
-                    <%--<li class="nav-item">--%>
-                    <%--<a class="nav-link text-secondary" href="#">--%>
-                    <%--<i class="fas fa-chart-line"></i>--%>
-                    <%--Estatísticas--%>
-                    <%--</a>--%>
-                    <%--</li>--%>
                     <li class="nav-item">
-                        <a class="nav-link text-secondary" href="/aten_cadastrar">
+                        <a class="nav-link text-secondary" href="/aten_listar">
                             <i class="fas fa-user-circle"></i>
                             Usuários
                         </a>
@@ -131,11 +129,9 @@
         <!--MENU LATERAL FIM -->
 
 
-
-
-        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+                <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
                     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-                        <h1 class="h2">Cadastrar Paciente</h1>
+                        <h1 class="h2">Alterar Paciente</h1>
                         <div class="btn-toolbar mb-2 mb-md-0">
                         </div>
                     </div>
@@ -145,63 +141,77 @@
 
                         <form method="post" action="">
 
+
                             <div class="form-group">
                                 <label>Nome do Paciente</label>
-                                <input type="text" class="form-control" placeholder="Nome do Paciente" name="nome">
+                                <input type="text" class="form-control" placeholder="Nome do Paciente" name="nome" value="${paciente.nome}">
                             </div>
 
                             <div class="form-group">
                                 <label>Nº da Carteirinha do SUS</label>
-                                <input type="text" class="form-control" placeholder="Nº da Carteirinha do SUS" name="sus">
+                                <input type="text" class="form-control" placeholder="Nº da Carteirinha do SUS" name="sus" value="${paciente.sus}">
                             </div>
-                            <fieldset>
-                                <legend>Sexo</legend>
-                                <%--FORM CHECK--%>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="sexo" id="Feminino" value="f" checked>
-                                    <label class="form-check-label" for="Feminino">
-                                        Feminino
-                                    </label>
-                                    <br>
-                                    <input class="form-check-input" type="radio" name="sexo" id="Masculino" value="m">
-                                    <label class="form-check-label" for="Masculino">
-                                        Masculino
-                                    </label>
-                                    <br>
-                                    <input class="form-check-input" type="radio" name="sexo" id="Semopcao" value="i">
-                                    <label class="form-check-label" for="Semopcao">
-                                        Sem opção
-                                    </label>
-                                </div>
-                            </fieldset>
 
-                            <br>
+                            <div class="form-check">
+                            
+                                <label>Sexo</label>
+                                <%--FORM CHECK--%>
+                                <br>
+                                <c:if test="${paciente.sexo eq 'f'}">
+                                	    <input class="form-check-input" type="radio" name="sexo" id="Feminino" value="f" checked>
+	                                    <label class="form-check-label" for="Feminino">
+	                                        Feminino
+	                                    </label>
+                                </c:if>
+                                <c:if test="${paciente.sexo != 'f'}">
+                                	    <input class="form-check-input" type="radio" name="sexo" id="Feminino" value="f">
+	                                    <label class="form-check-label" for="Feminino">
+	                                        Feminino
+	                                    </label>
+                                </c:if>
+                                <br>
+                               	<c:if test="${paciente.sexo eq 'm'}">
+                                	    <input class="form-check-input" type="radio" name="sexo" id="Masculino" value="m" checked>
+	                                    <label class="form-check-label" for="Masculino">
+	                                        Masculino
+	                                    </label>
+                                </c:if>
+                                <c:if test="${paciente.sexo != 'm'}">
+                                	    <input class="form-check-input" type="radio" name="sexo" id="Masculino" value="m">
+	                                    <label class="form-check-label" for="Masculino">
+	                                        Masculino
+	                                    </label>
+                                </c:if>
+                                <br>
+                                <c:if test="${paciente.sexo eq 'i'}">
+                                	    <input class="form-check-input" type="radio" name="sexo" id="semOpcao" value="i" checked>
+	                                    <label class="form-check-label" for="semOpcao">
+	                                        Não declarar
+	                                    </label>
+                                </c:if>
+                                <c:if test="${paciente.sexo != 'i'}">
+                                	    <input class="form-check-input" type="radio" name="sexo" id="semOpcao" value="i">
+	                                    <label class="form-check-label" for="semOpcao">
+	                                        Não declarar
+	                                    </label>
+                                </c:if>
+                                
+							</div>
+							<br>
+							<fieldset>
+								<legend></legend>
+							</fieldset>
                             <div class="form-group">
                                 <label>Data de Nascimento</label>
-                                <input type="date" class="form-control" name="nascimento" placeholder="Data de Nascimento">
+                                <input type="date" class="form-control" placeholder="Data de Nascimento" name="nascimento" value="${paciente.nascimento}">
                             </div>
-
-
-
-
-                            <button type="submit" class="btn btn-outline-primary">Cadastrar</button>
+                            <button type="submit" class="btn btn-outline-primary">Salvar</button>
                             <a class="btn btn-outline-primary" href="/pac_listar">Voltar</a>
                         </form>
                     </div>
-
-
                 </main>
-
-
-
-
-
-
-
-
             </div>
         </div>
-
 
         <!--JAVASCRIPT PATH INICIO -->
         <script src="../../../resources/static/js/jquery.js"></script>
@@ -211,4 +221,6 @@
         <!--JAVASCRIPT PATH FIM -->
 
     </body>
+
+
 </html>

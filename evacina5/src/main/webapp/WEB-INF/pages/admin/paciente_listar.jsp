@@ -3,7 +3,8 @@
     Created on : 15/09/2018, 19:54:39
     Author     : gustav0
 --%>
-
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/functions" prefix = "fn" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%--<%@taglib prefix="s" uri="/struts-tags" %>--%>
 <!DOCTYPE html>
@@ -130,11 +131,6 @@
         </nav>
         <!--MENU LATERAL FIM -->
 
-
-
-
-
-
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
                     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
                         <h1 class="h2">Pacientes</h1>
@@ -158,46 +154,50 @@
                             <table class="table table-striped table-sm">
                                 <thead>
                                     <tr>
-                                        <th>ID</th>
-                                        <th>Nome do Paciente</th>
                                         <th>Nº do SUS</th>
+                                        <th>Nome do Paciente</th>
                                         <th>Sexo</th>
                                         <th>Data de Nascimento</th>
                                         <th>Funções</th>
                                     </tr>
                                 </thead>
+
                                 <tbody>
-<!--  USUARIOS -->
+
+                                <c:forEach items="${pacientes}" var="paciente">
+                                    <!--  USUARIOS -->
                                     <tr>
-                                        <td>1</td>
-                                        <td>Sergio Roberto Pinto de Oliveira</td>
-                                        <td>000111888555</td>
-                                        <td>M</td>
-                                        <td>29/06/1987</td>
+                                        <td>${paciente.sus}</td>
+                                        <td>${paciente.nome}</td>
                                         <td>
-                                            <button type="button" class="btn btn-outline-info btn-sm"><i class="fas fa-edit"></i></button>
-                                            <button type="button" class="btn btn-outline-danger btn-sm"><i class="fas fa-trash-alt"></i></button>
+                                            <c:choose>
+                                                <c:when test="${paciente.sexo == 'f'}">
+                                                    <jsp:text>Feminino</jsp:text>
+                                                </c:when>
+                                                <c:when test="${paciente.sexo == 'm'}">
+                                                    <jsp:text>Masculino</jsp:text>
+                                                </c:when>
+                                                <c:otherwise>
+                                                    <jsp:text>Indiferente</jsp:text>
+                                                </c:otherwise>
+                                            </c:choose>
                                         </td>
+                                        <td>
+                                                ${paciente.nascimento}</td>
+                                        <td>
+                                            <a type="button" class="btn btn-outline-info btn-sm" href="/paciente/${paciente.sus}"><i class="fas fa-edit"></i></a>
+                                            <a type="button" class="btn btn-outline-danger btn-sm" href="/delPaciente?sus=${paciente.sus}" onclick="confirm('Confirma exclusão?')"><i class="fas fa-trash-alt"></i></a>
+                          
+                                            </td>
                                     </tr>
 
 
-
+                                </c:forEach>
                                 </tbody>
                             </table>
                         </div>
                     </div>
-
-
-
                 </main>
-
-
-
-
-
-
-
-
             </div>
         </div>
 

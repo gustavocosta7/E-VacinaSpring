@@ -13,10 +13,9 @@ public class Paciente implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Id
-    @GeneratedValue
     private long sus;
     private String nome;
-    private char sexo;
+    private String sexo;
     private String nascimento;
 
 
@@ -24,7 +23,7 @@ public class Paciente implements Serializable {
 
     }
 
-    public Paciente(String nome, char sexo, String nascimento) {
+    public Paciente(String nome, String sexo, String nascimento) {
         this.nome = nome;
         this.sexo = sexo;
         this.nascimento = nascimento;
@@ -46,11 +45,11 @@ public class Paciente implements Serializable {
         this.nome = nome;
     }
 
-    public char getSexo() {
+    public String getSexo() {
         return sexo;
     }
 
-    public void setSexo(char sexo) {
+    public void setSexo(String sexo) {
         this.sexo = sexo;
     }
 

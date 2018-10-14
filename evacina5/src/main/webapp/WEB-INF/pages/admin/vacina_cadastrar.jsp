@@ -159,7 +159,7 @@
                             </div>
 
                             <button type="submit" class="btn btn-outline-primary">Cadastrar</button>
-                            <a class="btn btn-outline-primary" href="adm-postagens-listar.html">Voltar</a>
+                            <a class="btn btn-outline-primary" href="/vac_listar">Voltar</a>
                         </form>
                     </div>
 
