@@ -11,10 +11,5 @@ public class HomeController {
         return "index";
     }
 
-    @RequestMapping("/consulta")
-    public String consulta(){
-        return "paciente/consulta";
-    }
-
 
 }

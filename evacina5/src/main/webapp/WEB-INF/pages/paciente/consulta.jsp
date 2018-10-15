@@ -4,6 +4,8 @@
     Author     : gustav0
 --%>
 
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/functions" prefix = "fn" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%--<%@taglib prefix="s" uri="/struts-tags" %>--%>
 <!DOCTYPE html>
@@ -44,15 +46,7 @@
                     </h4>
                 </ul>
             </div>
-
-
-
-
-
         </nav>
-
-
-
 
         <!--MENU LATERAL INICIO -->
         <div class="container-fluid">
@@ -77,11 +71,15 @@
 
                     <div class="d-flex flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
                         <h1 class="h2">Digite seu nº do SUS</h1>
+                        <span>&nbsp;</span>
                         <div class="btn-toolbar">
                             <div class="btn-group">
-                                <input class="form-control" type="search" size="60" placeholder="Digite seu nº do SUS" aria-label="Search" autofocus maxlength="120">
+                            
+                            <form action="/consultasus" method="get" class="form-inline">
+                                <input class="form-control" type="text" name="tfSus" size="60" placeholder="Digite seu nº do SUS" aria-label="Search" autofocus maxlength="120">
+                                <span>&nbsp;</span>
                                 <button class="btn my-2 btn-outline-secondary my-sm-0" type="submit"><i class="fas fa-search"></i></button>
-
+							</form>
                             </div>
                         </div>
                     </div>
@@ -93,12 +91,24 @@
                         </div>
                         <div>
 
-                            <h6> Nome:</h6>
-                            <h6> Nº da Carteirinha do SUS:</h6>
+                            <h6> Nome:</h6><span>${paciente.nome}</span>
+                            <h6> Nº da Carteirinha do SUS:</h6><span>${paciente.sus}</span>
                             <h6> Sexo:</h6>
-                            <h6> Data de Nascimento:</h6>
+                            
+                            <c:choose>
+                                                <c:when test="${paciente.sexo == 'f'}">
+                                                    <jsp:text>Feminino</jsp:text>
+                                                </c:when>
+                                                <c:when test="${paciente.sexo == 'm'}">
+                                                    <jsp:text>Masculino</jsp:text>
+                                                </c:when>
+                                                <c:otherwise>
+                                                    <jsp:text>Indiferente</jsp:text>
+                                                </c:otherwise>
+                            </c:choose>
+                            <h6> Data de Nascimento:</h6><span>${paciente.nascimento}</span>
                             <BR>
-                            <H3> Registro de Vacinação</H3>
+                            <H3> Registro de Vacinação: </H3>
                             <BR>
                             <div class="table-responsive">
                                 <table class="table table-striped table-sm">

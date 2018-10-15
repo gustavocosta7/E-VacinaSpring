@@ -89,4 +89,20 @@ public class PacienteController {
 	    	return modelAndView;
 	    }
 	    
+	    @RequestMapping(value="/consultasus")
+	    public ModelAndView consultaPacienteSus(HttpServletRequest request) {
+	    	ModelAndView mv = new ModelAndView("paciente/consulta");
+	    	long sus = Long.parseLong(request.getParameter("tfSus"));
+	    	Paciente paciente = pr.findById(sus);
+	    	mv.addObject("paciente",paciente);
+	    	return mv;
+	    }
+	    
+	    @RequestMapping("/consulta")
+	    public String consulta(){
+	        return "paciente/consulta";
+	    }
+
+
+	    
 }
