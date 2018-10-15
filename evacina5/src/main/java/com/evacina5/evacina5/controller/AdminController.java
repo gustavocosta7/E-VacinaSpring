@@ -59,7 +59,7 @@ public class AdminController {
 //--------------PACIENTE -------------------------//
 
     @RequestMapping(value ="/pac_cadastrar", method = RequestMethod.POST)
-    public ModelAndView cadastraPaciente(Paciente paciente, HttpServletRequest request) throws ParseException{
+    public ModelAndView cadastraPaciente(Paciente paciente) throws ParseException{
         Calendar c =  DataUtil.ConverterTextoEmData(String.valueOf(paciente.getNascimento()));
         paciente.setNascimento(DataUtil.ConverterDataEmTexto(c));
         pr.save(paciente);
@@ -82,23 +82,27 @@ public class AdminController {
     public String pacienteCadastrar(){
         return "admin/paciente_cadastrar";
     }
-    
-    
-    @GetMapping("/paciente/{sus}")
-    public ModelAndView alteraPaciente(@PathVariable(value="sus")long sus) {
+
+    /************Entra na view e seta variaveis
+     * @throws ParseException **************/
+    @RequestMapping(value="/paciente/{sus}",method=RequestMethod.GET)
+    public ModelAndView alteraPaciente(@PathVariable(value="sus")long sus) throws ParseException {
     	ModelAndView modelAndView = new ModelAndView("admin/paciente_alterar");
     	Paciente p = pr.findById(sus);
+    	Calendar c = DataUtil.ConverterTextoEmData2(p.getNascimento());
+    	p.setNascimento(DataUtil.ConverterDataEmTexto2(c));
     	modelAndView.addObject("paciente",p);
     	return modelAndView;
     }
-    
-    @GetMapping("/paciente/{sus}")
-    public String alterarPaciente(@PathVariable(value="sus")long sus, method = RequestMethod.POST ) {
-    	ModelAndView modelAndView = new ModelAndView("admin/paciente_alterar");
-    	Paciente p = pr.findById(sus);
-    	modelAndView.addObject("paciente",p);
-    	return modelAndView;
+    /******altera de fato*****/
+    @RequestMapping(value="/paciente/{sus}",method=RequestMethod.POST)
+    public String alterarPaciente(Paciente paciente) throws ParseException {
+    	Calendar c =  DataUtil.ConverterTextoEmData(String.valueOf(paciente.getNascimento()));
+        paciente.setNascimento(DataUtil.ConverterDataEmTexto(c));
+    	pr.save(paciente);
+    	return "redirect:/pac_listar";
     }
+    
     
     
     @RequestMapping("/delPaciente")

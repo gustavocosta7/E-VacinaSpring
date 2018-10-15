@@ -21,18 +21,24 @@ public class DataUtil {
         Calendar c = dataCalendar;
         return formatador.format(c.getTime());
     }
+    public static String ConverterDataEmTexto2(Calendar dataCalendar){
+        SimpleDateFormat formatador = new SimpleDateFormat("yyyy-MM-dd");
+        Calendar c = dataCalendar;
+        return formatador.format(c.getTime());
+    }
 
     public static Calendar ConverterTextoEmData(String dataRecebida) throws ParseException{
-        //definindo o formato esperado
-    	
-    	  	SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-    	    Date dataFormatada = sdf.parse(dataRecebida);
-//    	    
-//    	    
-//        SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
-//        //convertendo string para date
-//        Date dataFormatada = formato.parse(dataRecebida);
-//        //saída com o formato desejado
+        
+    	SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+    	Date dataFormatada = sdf.parse(dataRecebida);
+        Calendar dataCalendar = Calendar.getInstance();
+        dataCalendar.setTime(dataFormatada);
+        return dataCalendar;
+    }
+    public static Calendar ConverterTextoEmData2(String dataRecebida) throws ParseException{
+        
+    	SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+    	Date dataFormatada = sdf.parse(dataRecebida);
         Calendar dataCalendar = Calendar.getInstance();
         dataCalendar.setTime(dataFormatada);
         return dataCalendar;
