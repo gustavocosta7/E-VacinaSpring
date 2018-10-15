@@ -27,6 +27,7 @@ import java.text.SimpleDateFormat;
 import java.time.format.DateTimeFormatter;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
 import java.util.Locale;
 
 @Controller
@@ -36,8 +37,7 @@ public class AdminController {
     private VacinaRepository vr;
     @Autowired
     private AtendenteRepository ar;
-    @Autowired
-    private PacienteRepository pr;
+   
     @Autowired
     private LocalRepository lr;
 
@@ -56,64 +56,7 @@ public class AdminController {
     public String adminIndex(){
         return "admin/admin_index";
     }
-//--------------PACIENTE -------------------------//
 
-    @RequestMapping(value ="/pac_cadastrar", method = RequestMethod.POST)
-    public ModelAndView cadastraPaciente(Paciente paciente) throws ParseException{
-        Calendar c =  DataUtil.ConverterTextoEmData(String.valueOf(paciente.getNascimento()));
-        paciente.setNascimento(DataUtil.ConverterDataEmTexto(c));
-        pr.save(paciente);
-
-        ModelAndView modelAndView = new ModelAndView("admin/paciente_listar");
-        Iterable<Paciente> pacientes = pr.findAll();
-        modelAndView.addObject("pacientes",pacientes);
-        return modelAndView;
-    }
-
-    @RequestMapping(value ="/pac_listar", method = RequestMethod.GET)
-    public ModelAndView pacienteListar(){
-        ModelAndView modelAndView = new ModelAndView("admin/paciente_listar");
-        Iterable<Paciente> pacientes = pr.findAll();
-        modelAndView.addObject("pacientes",pacientes);
-        return modelAndView;
-    }
-
-    @RequestMapping(value ="/pac_cadastrar", method = RequestMethod.GET)
-    public String pacienteCadastrar(){
-        return "admin/paciente_cadastrar";
-    }
-
-    /************Entra na view e seta variaveis
-     * @throws ParseException **************/
-    @RequestMapping(value="/paciente/{sus}",method=RequestMethod.GET)
-    public ModelAndView alteraPaciente(@PathVariable(value="sus")long sus) throws ParseException {
-    	ModelAndView modelAndView = new ModelAndView("admin/paciente_alterar");
-    	Paciente p = pr.findById(sus);
-    	Calendar c = DataUtil.ConverterTextoEmData2(p.getNascimento());
-    	p.setNascimento(DataUtil.ConverterDataEmTexto2(c));
-    	modelAndView.addObject("paciente",p);
-    	return modelAndView;
-    }
-    /******altera de fato*****/
-    @RequestMapping(value="/paciente/{sus}",method=RequestMethod.POST)
-    public String alterarPaciente(Paciente paciente) throws ParseException {
-    	Calendar c =  DataUtil.ConverterTextoEmData(String.valueOf(paciente.getNascimento()));
-        paciente.setNascimento(DataUtil.ConverterDataEmTexto(c));
-    	pr.save(paciente);
-    	return "redirect:/pac_listar";
-    }
-    
-    
-    
-    @RequestMapping("/delPaciente")
-    public String deletaPaciente(long sus) {
-    	Paciente p = pr.findById(sus);
-    	pr.delete(p);
-    	return "redirect:/pac_listar";
-    	
-    	
-    }
-    
 
     // -------------------- VACINAS -----------------------//
     @RequestMapping(value ="/vac_listar", method = RequestMethod.GET)

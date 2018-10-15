@@ -138,12 +138,12 @@
                             <div class="btn-group mr-2">
 
 
+								<form action="/pesquisaPaciente" method="get" class="form-inline">
+									<input class="form-control mr-sm-2" type="search" size="50" name="tfPesquisar" placeholder="Pesquisar Nome de Pacientes" aria-label="Search" autofocus maxlength="120">
+	                                <button class="btn my-2 btn-outline-secondary my-sm-0" type="submit"><i class="fas fa-search"></i></button>
 
-                                <input class="form-control mr-sm-2" type="search" size="50" placeholder="Pesquisar Nome de Pacientes" aria-label="Search" autofocus maxlength="120">
-                                <button class="btn my-2 btn-outline-secondary my-sm-0" type="submit"><i class="fas fa-search"></i></button>
-                                <span>&nbsp</span>
-
-                                <a class="btn btn-sm btn-outline-secondary" href="/pac_cadastrar">Novo Paciente</a>
+								</form>
+                                <span>&nbsp</span><a class="btn btn-sm btn-outline-secondary" href="/pac_cadastrar">Novo Paciente</a>
 
                             </div>
                         </div>
