@@ -34,12 +34,8 @@ import java.util.Locale;
 public class AdminController {
 // DECLARAÇÃO DOS REPOSITORIOS
     @Autowired
-    private VacinaRepository vr;
-    @Autowired
     private AtendenteRepository ar;
-   
-    @Autowired
-    private LocalRepository lr;
+
 
 
     //Mapaeamento de rotas
@@ -58,24 +54,7 @@ public class AdminController {
     }
 
 
-    // -------------------- VACINAS -----------------------//
-    @RequestMapping(value ="/vac_listar", method = RequestMethod.GET)
-    public String listarVacinas(){
-        return "admin/vacina_listar";
-    }
 
-    @RequestMapping(value ="/vac_cadastrar", method = RequestMethod.GET)
-    public String cadastrarVacina(){
-        return "admin/vacina_cadastrar";
-    }
-
-
-    @RequestMapping(value ="/vac_cadastrar", method = RequestMethod.POST)
-    public String cadastraVacina(Vacina vacina){
-        vr.save(vacina);
-
-        return "admin/vacina_listar";
-    }
 
     //-------------------ATENDENTE--------------------------//
 
@@ -98,25 +77,29 @@ public class AdminController {
         return "admin/atendente_listar";
     }
 
-//--------------------------LOCAL-----------------------------
 
-    @RequestMapping(value ="/local_cad", method = RequestMethod.GET)
-    public String cadastrarLocal(){
-        return "admin/local_cadastrar";
+    @Autowired
+    private VacinaRepository vr;
+
+    // -------------------- VACINAS -----------------------//
+    @RequestMapping(value ="/vac_listar", method = RequestMethod.GET)
+    public String listarVacinas(){
+        return "admin/vacina_listar";
     }
 
-    @RequestMapping(value ="/local_listar", method = RequestMethod.GET)
-    public String listarLocais(){
-        return "admin/local_listar";
-    }
-
-    @RequestMapping(value ="/local_cad", method = RequestMethod.POST)
-    public String cadastrarLocal(Local local){
-        lr.save(local);
-
-        return "admin/local_listar";
+    @RequestMapping(value ="/vac_cadastrar", method = RequestMethod.GET)
+    public String cadastrarVacina(){
+        return "admin/vacina_cadastrar";
     }
 
 
-
+    @RequestMapping(value ="/vac_cadastrar", method = RequestMethod.POST)
+    public String cadastraVacina(Vacina vacina){
+        vr.save(vacina);
+        return "admin/vacina_listar";
+    }
 }
+
+
+
+

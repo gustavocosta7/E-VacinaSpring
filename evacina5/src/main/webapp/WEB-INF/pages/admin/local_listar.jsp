@@ -1,5 +1,6 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%--<%@taglib prefix="s" uri="/struts-tags" %>--%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/functions" prefix = "fn" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -42,7 +43,7 @@
 
 
 
-    <div class="collapse navbar-collapse" id="">
+    <div class="collapse navbar-collapse">
         <ul class="navbar-nav ml-auto">
 
             <li class="nav-item">
@@ -100,13 +101,6 @@
                             <i class="far fa-hospital"></i>
                             &nbspLocais de Vacina
                         </a>
-                    </li>
-                    <%--<li class="nav-item">--%>
-                    <%--<a class="nav-link text-secondary" href="#">--%>
-                    <%--<i class="fas fa-chart-line"></i>--%>
-                    <%--Estatísticas--%>
-                    <%--</a>--%>
-                    <%--</li>--%>
                     <li class="nav-item">
                         <a class="nav-link text-secondary" href="/aten_listar">
                             <i class="fas fa-user-circle"></i>
@@ -125,23 +119,23 @@
         <!--MENU LATERAL FIM -->
 
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
-          <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-            <h1 class="h2">Locais</h1>
-            <div class="btn-toolbar mb-2 mb-md-0">
-              <div class="btn-group mr-2">
+            <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                <h1 class="h2">Locais</h1>
+                <div class="btn-toolbar mb-2 mb-md-0">
+                    <div class="btn-group mr-2">
 
 
+                        <form action="/pesquisaLocal" method="get" class="form-inline">
+                            <input class="form-control mr-sm-2" type="search" size="50" name="tfPesquisar" placeholder="Pesquisar local" aria-label="Search" autofocus maxlength="120">
+                            <button class="btn my-2 btn-outline-secondary my-sm-0" type="submit"><i class="fas fa-search"></i></button>
 
-                <input class="form-control mr-sm-2" type="search" size="50" placeholder="Pesquisar Local de Vacinação" aria-label="Search" autofocus maxlength="120">
-                 <button class="btn my-2 btn-outline-secondary my-sm-0" type="submit"><i class="fas fa-search"></i></button>
-                 <span>&nbsp</span>
-                 
-                <a class="btn btn-sm btn-outline-secondary" href="/local_cad">Novo Local</a>
-                
-              </div>
+                        </form>
+                        <span>&nbsp</span><a class="btn btn-sm btn-outline-secondary" href="/local_cad">Novo Local</a>
+
+                    </div>
+                </div>
             </div>
-          </div>
-          <div>
+            <div>
 
           <div class="table-responsive">
             <table class="table table-striped table-sm">
@@ -155,69 +149,27 @@
                 </tr>
               </thead>
               <tbody>
+                <c:forEach items="${locais}" var="local">
+                    <tr>
 
-                <tr>
-                  <td>1</td>
-                  <td>UBS Japiim</td>
-                  <td>Manaus</td>
-                  <td>AM</td>
-                  <td>
-                    <button type="button" class="btn btn-outline-info btn-sm"><i class="fas fa-edit"></i></button>
-                    <button type="button" class="btn btn-outline-danger btn-sm"><i class="fas fa-trash-alt"></i></button>
-                  </td>
-                </tr>
+                        <td>${local.id}</td>
+                        <td>${local.nome}</td>
+                        <td>${local.cidade}</td>
+                        <td>${local.uf}</td>
+                        <td>
+                            <a type="button" class="btn btn-outline-info btn-sm" href="/local/${local.id}"><i class="fas fa-edit"></i></a>
+                            <a type="button" class="btn btn-outline-danger btn-sm" href="/delLocal?id=${local.id}"><i class="fas fa-trash-alt"></i></a>
 
+                        </td>
+                    </tr>
 
-
-                <tr>
-                  <td>2</td>
-                  <td>SPA Redenção</td>
-                  <td>Manaus</td>
-                  <td>AM</td>
-                  <td>
-                    <button type="button" class="btn btn-outline-info btn-sm"><i class="fas fa-edit"></i></button>
-                    <button type="button" class="btn btn-outline-danger btn-sm"><i class="fas fa-trash-alt"></i></button>
-                  </td>
-                </tr>
-
-               <tr>
-                  <td>3</td>
-                  <td>PS Funasa</td>
-                  <td>Manacapuru</td>
-                  <td>AM</td>
-                  <td>
-                    <button type="button" class="btn btn-outline-info btn-sm"><i class="fas fa-edit"></i></button>
-                    <button type="button" class="btn btn-outline-danger btn-sm"><i class="fas fa-trash-alt"></i></button>
-                  </td>
-                </tr>
-
-               <tr>
-                  <td>4</td>
-                  <td>US Sacramenta</td>
-                  <td>Belém</td>
-                  <td>PA</td>
-                  <td>
-                    <button type="button" class="btn btn-outline-info btn-sm"><i class="fas fa-edit"></i></button>
-                    <button type="button" class="btn btn-outline-danger btn-sm"><i class="fas fa-trash-alt"></i></button>
-                  </td>
-                </tr>
-                
+                </c:forEach>
               </tbody>
             </table>
           </div>
           </div>
-
-
-
 </main>
 
-              
-
-
-
-
-
-              
             </div>
           </div>
 
