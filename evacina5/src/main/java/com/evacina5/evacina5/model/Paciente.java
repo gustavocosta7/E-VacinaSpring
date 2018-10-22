@@ -5,6 +5,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Calendar;
+import java.util.List;
 
 
 @Entity
@@ -17,11 +18,14 @@ public class Paciente implements Serializable {
     private String nome;
     private String sexo;
     private String nascimento;
+    @OneToMany
+    @JoinColumn(name="sus")
+    private List<Vacinacao> vacinacao;
 
 
     public Paciente() {
-
-    }
+		// TODO Auto-generated constructor stub
+	}
 
     public Paciente(String nome, String sexo, String nascimento) {
         this.nome = nome;
@@ -29,7 +33,17 @@ public class Paciente implements Serializable {
         this.nascimento = nascimento;
     }
 
-    public long getSus() {
+    
+    
+    public Paciente(long sus, String nome, String sexo, String nascimento, List<Vacinacao> vacinacao) {
+		this.sus = sus;
+		this.nome = nome;
+		this.sexo = sexo;
+		this.nascimento = nascimento;
+		this.vacinacao = vacinacao;
+	}
+
+	public long getSus() {
         return sus;
     }
 

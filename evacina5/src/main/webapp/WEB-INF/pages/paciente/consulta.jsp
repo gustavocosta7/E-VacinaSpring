@@ -120,7 +120,11 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-<%-- VACINAS E REGISTROS --%>
+										<tr>
+											<td>Sarampo</td>
+											<td>1</td>
+											<td>28/06/2018</td>
+										</tr>
                                     </tbody>
                                 </table>
                             </div>

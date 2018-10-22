@@ -16,124 +16,122 @@
         <meta http-equiv="X-UA-Compatible" content="IE-edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <link rel="icon" href="../img/logo-p.png">
-        <title>E-Vacinas</title>
+
+        <link rel="icon" href="../../../resources/static/img/logo-p.png">
+        <title>E-Vacina</title>
 
         <!--CSS PATH INICIO -->
-        <link href="../css/bootstrap.min.css" rel="stylesheet">
-        <link href="../css/style.css" rel="stylesheet">
-        <link href="../css/upload-img-exibir.css" rel="stylesheet">
+        <link href="../../../resources/static/css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../resources/static/css/style.css" rel="stylesheet">
+        <link href="../../../resources/static/css/upload-img-exibir.css.css" rel="stylesheet">
         <!--CSS PATH FIM -->
 
+
     </head>
+
     <body>
 
-        <nav class="navbar navbar-expand-lg navbar-white bg-primary">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+    <nav class="navbar navbar-expand-lg navbar-white bg-primary">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
 
-            <a class="navbar-brand" href="/">
-                <img src="../img/logo-topo.png"  alt="">
-            </a>
+        <a class="navbar-brand" href="/">
+            <img src="../../../resources/static/img/logo-topo.png"  alt="">
+        </a>
 
-
-
-
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav ml-auto">
-                    <h4 class="text-light">
-                        Console de Administração
-                    </h4>
-                </ul>
-            </div>
+        <div class="collapse navbar-collapse" id="">
+            <ul class="navbar-nav ml-auto">
+                <h4 class="text-light">
+                    Console de Administração
+                </h4>
+            </ul>
+        </div>
 
 
 
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav ml-auto">
+        <div class="collapse navbar-collapse" id="">
+            <ul class="navbar-nav ml-auto">
 
-                    <li class="nav-item">
-                        <a href="#" title="Usuário">
-                            <button class="btn btn-outline-light my-2 my-sm-0">
-                                <i class="far fa-user-circle"></i>
-                                <i> Nome Usuário </i>
-                            </button>
-                        </a>
-                    </li>
+                <li class="nav-item">
+                    <a href="#" title="Usuário">
+                        <button class="btn btn-outline-light my-2 my-sm-0">
+                            <i class="far fa-user-circle"></i>
+                            <i> Nome Usuário </i>
+                        </button>
+                    </a>
+                </li>
 
-                    <li>&nbsp</li>
+                <li>&nbsp</li>
 
-                    <li class="nav-item">
-                        <a href="#" title="Sair">
-                            <button class="btn btn-outline-light my-2 my-sm-0">
+                <li class="nav-item">
+                    <a href="#" title="Sair">
+                        <button class="btn btn-outline-light my-2 my-sm-0">
+                            <i class="fas fa-sign-out-alt"></i>
+                        </button>
+                    </a>
+                </li>
+
+            </ul>
+        </div>
+
+    </nav>
+
+
+
+    <!--MENU LATERAL INICIO -->
+    <div class="container-fluid">
+        <div class="row">
+            <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+                <div class="sidebar-sticky">
+
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link active text-secondary" href="/admin_index">
+                                <i class="fas fa-home"></i>
+                                &nbspInício <span class="sr-only">(current)</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-secondary" href="/pac_listar">
+                                <i class="fas fa-users"></i>
+                                Pacientes
+                            </a>
+                        <li class="nav-item">
+                            <a class="nav-link text-secondary" href="/vac_listar">
+                                <i class="fas fa-syringe"></i>
+                                &nbspVacinas
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-secondary" href="/local_listar">
+                                <i class="far fa-hospital"></i>
+                                &nbspLocais de Vacina
+                            </a>
+                        </li>
+                        <%--<li class="nav-item">--%>
+                        <%--<a class="nav-link text-secondary" href="#">--%>
+                        <%--<i class="fas fa-chart-line"></i>--%>
+                        <%--Estatísticas--%>
+                        <%--</a>--%>
+                        <%--</li>--%>
+                        <li class="nav-item">
+                            <a class="nav-link text-secondary" href="/aten_cadastrar">
+                                <i class="fas fa-user-circle"></i>
+                                Usuários
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-secondary" href="/sair">
                                 <i class="fas fa-sign-out-alt"></i>
-                            </button>
-                        </a>
-                    </li>
-
-                </ul>
-            </div>
-
-        </nav>
-
-
-
-
-        <!--MENU LATERAL INICIO -->
-        <div class="container-fluid">
-            <div class="row">
-                <nav class="col-md-2 d-none d-md-block bg-light sidebar">
-                    <div class="sidebar-sticky">
-
-                        <ul class="nav flex-column">
-                            <li class="nav-item">
-                                <a class="nav-link active text-secondary" href="#">
-                                    <i class="fas fa-home"></i>
-                                    &nbspInício <span class="sr-only">(current)</span>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-secondary" href="adm-usuarios-listar.html">
-                                    <i class="fas fa-users"></i>
-                                    Pacientes
-                                </a>
-                            <li class="nav-item">
-                                <a class="nav-link text-secondary" href="adm-cliente-listar.html">
-                                    <i class="fas fa-syringe"></i>
-                                    &nbspVacinas
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-secondary" href="adm-cliente-listar.html">
-                                    <i class="far fa-hospital"></i>
-                                    &nbspLocais de Vacina
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-secondary" href="#">
-                                    <i class="fas fa-chart-line"></i>
-                                    Estatísticas
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-secondary" href="#">
-                                    <i class="fas fa-user-circle"></i>
-                                    Usuários
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-secondary" href="#">
-                                    <i class="fas fa-sign-out-alt"></i>
-                                    Sair
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </nav>
-                <!--MENU LATERAL FIM -->
-
+                                Sair
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            <!--MENU LATERAL FIM -->
 
 
 
@@ -148,17 +146,17 @@
 
                     <div>
 
-                        <form method="post" action="alterarVacina">
-
-
+                        <form method="post" >
+								
+							<input type="hidden" name="id" value="${vacina.id }">
                             <div class="form-group">
                                 <label>Nome da Vacina</label>
-                                <input type="text" class="form-control" placeholder="Nome da Vacina">
+                                <input type="text" class="form-control" placeholder="Nome da Vacina" name="nome" value="${vacina.nome }">
                             </div>
 
                             <div class="form-group">
                                 <label>Descrição</label>
-                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Descrição"></textarea>
+                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="descricao" placeholder="Descrição">${vacina.descricao }</textarea>
                             </div>
 
                             <button type="submit" class="btn btn-outline-primary">Salvar</button>
@@ -180,13 +178,12 @@
         </div>
 
 
-        <!--JAVASCRIPT PATH INICIO -->
-        <script src="../js/jquery.js"></script>
-        <script src="../js/bootstrap.min.js"></script>
-        <script src="../js/upload-img-exibir.js"></script>
-        <script defer src="../js/fontawesome-all.js"></script>
-        <!--JAVASCRIPT PATH FIM -->
-
+    <!--JAVASCRIPT PATH INICIO -->
+    <script src="../../../resources/static/js/jquery.js"></script>
+    <script src="../../../resources/static/js/bootstrap.min.js"></script>
+    <script src="../../../resources/static/js/upload-img-exibir.js"></script>
+    <script defer src="../../../resources/static/js/fontawesome-all.js"></script>
+    <!--JAVASCRIPT PATH FIM -->
 
 
     </body>
