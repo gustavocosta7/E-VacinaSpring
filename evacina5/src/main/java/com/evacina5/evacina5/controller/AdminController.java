@@ -32,13 +32,10 @@ import java.util.Locale;
 
 @Controller
 public class AdminController {
-	// DECLARAÇÃO DOS REPOSITORIOS
-    
+
     @Autowired
     private AtendenteRepository ar;
-   
-    @Autowired
-    private LocalRepository lr;
+
 
 
     //Mapaeamento de rotas
@@ -55,7 +52,7 @@ public class AdminController {
     public String adminIndex(){
         return "admin/admin_index";
     }
-    
+
 
     //-------------------ATENDENTE--------------------------//
 
@@ -78,25 +75,8 @@ public class AdminController {
         return "admin/atendente_listar";
     }
 
-//--------------------------LOCAL-----------------------------
-
-    @RequestMapping(value ="/local_cad", method = RequestMethod.GET)
-    public String cadastrarLocal(){
-        return "admin/local_cadastrar";
-    }
-
-    @RequestMapping(value ="/local_listar", method = RequestMethod.GET)
-    public String listarLocais(){
-        return "admin/local_listar";
-    }
-
-    @RequestMapping(value ="/local_cad", method = RequestMethod.POST)
-    public String cadastrarLocal(Local local){
-        lr.save(local);
-
-        return "admin/local_listar";
-    }
-
-
-
 }
+
+
+
+
