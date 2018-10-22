@@ -107,6 +107,12 @@
                                     &nbspLocais de Vacina
                                 </a>
                             </li>
+                            <%--<li class="nav-item">--%>
+                                <%--<a class="nav-link text-secondary" href="#">--%>
+                                    <%--<i class="fas fa-chart-line"></i>--%>
+                                    <%--Estatísticas--%>
+                                <%--</a>--%>
+                            <%--</li>--%>
                             <li class="nav-item">
                                 <a class="nav-link text-secondary" href="/aten_listar">
                                     <i class="fas fa-user-circle"></i>

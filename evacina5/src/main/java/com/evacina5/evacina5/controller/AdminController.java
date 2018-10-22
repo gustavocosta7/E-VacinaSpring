@@ -33,10 +33,6 @@ import java.util.Locale;
 @Controller
 public class AdminController {
 
-    @Autowired
-    private AtendenteRepository ar;
-
-
 
     //Mapaeamento de rotas
 
@@ -53,27 +49,6 @@ public class AdminController {
         return "admin/admin_index";
     }
 
-
-    //-------------------ATENDENTE--------------------------//
-
-    @RequestMapping(value ="/aten_cadastrar", method = RequestMethod.GET)
-    public String cadastraAtendente(){
-        return "admin/atendente_cadastrar";
-    }
-
-    @RequestMapping(value ="/aten_cadastrar", method = RequestMethod.POST)
-    public String cadastraAtendente(Atendente atendente){
-
-        ar.save(atendente);
-
-        return "admin/atendente_listar";
-    }
-
-
-    @RequestMapping(value ="/aten_listar", method = RequestMethod.GET)
-    public String listarAtendentes(){
-        return "admin/atendente_listar";
-    }
 
 }
 

@@ -106,11 +106,6 @@
                             &nbspLocais de Vacina
                         </a>
                     </li>
-                    <%--<li class="nav-item">--%>
-                    <%--<a class="nav-link text-secondary" href="#">--%>
-                    <%--<i class="fas fa-chart-line"></i>--%>
-                    <%--Estatísticas--%>
-                    <%--</a>--%>
                     <%--</li>--%>
                     <li class="nav-item">
                         <a class="nav-link text-secondary" href="/aten_listar">
@@ -133,17 +128,15 @@
 
                 <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
                     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-                        <h1 class="h2">Usuarios</h1>
+                        <h1 class="h2">Atendentes</h1>
                         <div class="btn-toolbar mb-2 mb-md-0">
                             <div class="btn-group mr-2">
+                                <form action="/pesquisaAtendente" method="get" class="form-inline">
+                                    <input class="form-control mr-sm-2" type="search" size="50" name="tfPesquisar" placeholder="Pesquisar atendente" aria-label="Search" autofocus maxlength="120">
+                                    <button class="btn my-2 btn-outline-secondary my-sm-0" type="submit"><i class="fas fa-search"></i></button>
 
-
-
-                                <input class="form-control mr-sm-2" type="search" size="50" placeholder="Pesquisar Local de Vacinação" aria-label="Search" autofocus maxlength="120">
-                                <button class="btn my-2 btn-outline-secondary my-sm-0" type="submit"><i class="fas fa-search"></i></button>
-                                <span>&nbsp</span>
-
-                                <a class="btn btn-sm btn-outline-secondary" href="/aten_cadastrar">Novo Usuário</a>
+                                </form>
+                                <span>&nbsp</span><a class="btn btn-sm btn-outline-secondary" href="/aten_cadastrar">Novo Atendente</a>
 
                             </div>
                         </div>
@@ -154,28 +147,28 @@
                             <table class="table table-striped table-sm">
                                 <thead>
                                     <tr>
-                                        <th>ID</th>
-                                        <th>Nome do Usuario</th>
                                         <th>Matricula</th>
+                                        <th>Nome do Usuario</th>
                                         <th>Senha</th>
                                         <th>Funções</th>
                                     </tr>
                                 </thead>
                                 <tbody>
+                                <c:forEach items="${atendentes}" var="atendente">
+                                <tr>
 
-                                    <tr>
-                                        <td>1</td>
-                                        <td>Fernando Gurgel</td>
-                                        <td>000696969</td>
-                                        <td>**********</td>
-                                        <td>
-                                            <button type="button" class="btn btn-outline-info btn-sm"><i class="fas fa-edit"></i></button>
-                                            <button type="button" class="btn btn-outline-danger btn-sm"><i class="fas fa-trash-alt"></i></button>
-                                        </td>
-                                    </tr>
+                                    <td>${atendente.id}</td>
+                                    <td>${atendente.nome}</td>
+                                    <td>${atendente.senha}</td>
+                                    <td>
+                                        <a type="button" class="btn btn-outline-info btn-sm" href="/atendente/${atendente.id}"><i class="fas fa-edit"></i></a>
+                                        <a type="button" class="btn btn-outline-danger btn-sm" href="/delAtendente?id=${atendente.id}"><i class="fas fa-trash-alt"></i></a>
 
+                                    </td>
+                                </tr>
 
-                                </tbody>
+                            </c:forEach>
+                            </tbody>
                             </table>
                         </div>
                     </div>

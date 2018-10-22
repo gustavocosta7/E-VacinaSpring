@@ -66,7 +66,7 @@ public class LocalController {
      * Delete
      */
     @RequestMapping("/delLocal")
-    public String deletaPaciente(long id) {
+    public String deletaLocal(long id) {
         Local l = lr.findById(id);
         lr.delete(l);
         return "redirect:/local_listar";
