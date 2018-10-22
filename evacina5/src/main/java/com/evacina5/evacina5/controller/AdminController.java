@@ -32,9 +32,8 @@ import java.util.Locale;
 
 @Controller
 public class AdminController {
-// DECLARAÇÃO DOS REPOSITORIOS
-    @Autowired
-    private VacinaRepository vr;
+	// DECLARAÇÃO DOS REPOSITORIOS
+    
     @Autowired
     private AtendenteRepository ar;
    
@@ -56,26 +55,7 @@ public class AdminController {
     public String adminIndex(){
         return "admin/admin_index";
     }
-
-
-    // -------------------- VACINAS -----------------------//
-    @RequestMapping(value ="/vac_listar", method = RequestMethod.GET)
-    public String listarVacinas(){
-        return "admin/vacina_listar";
-    }
-
-    @RequestMapping(value ="/vac_cadastrar", method = RequestMethod.GET)
-    public String cadastrarVacina(){
-        return "admin/vacina_cadastrar";
-    }
-
-
-    @RequestMapping(value ="/vac_cadastrar", method = RequestMethod.POST)
-    public String cadastraVacina(Vacina vacina){
-        vr.save(vacina);
-
-        return "admin/vacina_listar";
-    }
+    
 
     //-------------------ATENDENTE--------------------------//
 

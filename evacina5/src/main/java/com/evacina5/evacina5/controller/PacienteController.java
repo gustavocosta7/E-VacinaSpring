@@ -37,7 +37,7 @@ public class PacienteController {
 	        modelAndView.addObject("pacientes",pacientes);
 	        return modelAndView;
 	    }
-
+	    
 	    @RequestMapping(value ="/pac_listar", method = RequestMethod.GET)
 	    public ModelAndView pacienteListar(){
 	        ModelAndView modelAndView = new ModelAndView("admin/paciente_listar");

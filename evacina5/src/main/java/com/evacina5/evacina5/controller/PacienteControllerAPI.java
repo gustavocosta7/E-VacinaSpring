@@ -20,6 +20,9 @@ public class PacienteControllerAPI {
     public List<Paciente> listaPaciente(){
         return pacienteRepository.findAll();
     }
+    
+    
+    
 //
 //    @GetMapping("/paciente/{id}")
 //    public Paciente listaPacienteUnico(@PathVariable(value = "id") long id){

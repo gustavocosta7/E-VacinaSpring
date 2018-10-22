@@ -5,6 +5,7 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%--<%@taglib prefix="s" uri="/struts-tags" %>--%>
 <!DOCTYPE html>
 <html>
@@ -163,49 +164,21 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-
-                                    <tr>
-                                        <td>1</td>
-                                        <td>BCG</td>
-                                        <td>Previne as formas graves de tuberculose, principalmente miliar e meníngea.</td>
-                                        <td>
-                                            <button type="button" class="btn btn-outline-info btn-sm"><i class="fas fa-edit"></i></button>
-                                            <button type="button" class="btn btn-outline-danger btn-sm"><i class="fas fa-trash-alt"></i></button>
-                                        </td>
-                                    </tr>
-
-
-
-                                    <tr>
-                                        <td>2</td>
-                                        <td>Pentavalente</td>
-                                        <td>Previne difteria, tétano, coqueluche, hepatite B e meningite e infecções por HiB</td>
-                                        <td>
-                                            <button type="button" class="btn btn-outline-info btn-sm"><i class="fas fa-edit"></i></button>
-                                            <button type="button" class="btn btn-outline-danger btn-sm"><i class="fas fa-trash-alt"></i></button>
-                                        </td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>3</td>
-                                        <td>Rotavírus</td>
-                                        <td>Previne diarreia por rotavírus.</td>
-                                        <td>
-                                            <button type="button" class="btn btn-outline-info btn-sm"><i class="fas fa-edit"></i></button>
-                                            <button type="button" class="btn btn-outline-danger btn-sm"><i class="fas fa-trash-alt"></i></button>
-                                        </td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>4</td>
-                                        <td>Tríplice viral</td>
-                                        <td>Previne sarampo, caxumba e rubéola.</td>
-                                        <td>
-                                            <button type="button" class="btn btn-outline-info btn-sm"><i class="fas fa-edit"></i></button>
-                                            <button type="button" class="btn btn-outline-danger btn-sm"><i class="fas fa-trash-alt"></i></button>
-                                        </td>
-                                    </tr>
-
+									<c:forEach var="vac" items="${lista}">									
+	                                    <tr>
+	                                        <td>${vac.id }</td>
+	                                        <td>${vac.nome }</td>
+	                                        <td>${vac.descricao }</td>
+	                                        <td>
+	                                            <a href="/vac_alterar?id=${vac.id }">
+	                                            	<button type="button" class="btn btn-outline-info btn-sm"><i class="fas fa-edit"></i></button>
+	                                            </a>
+	                                            <a href="/vac_apagar?id=${vac.id }">	                                            
+	                                            <button type="button" class="btn btn-outline-danger btn-sm" onclick="alert('Deseja apagar?')"><i class="fas fa-trash-alt"></i></button>
+	                                            </a>
+	                                        </td>
+	                                    </tr>
+									</c:forEach>
                                 </tbody>
                             </table>
                         </div>

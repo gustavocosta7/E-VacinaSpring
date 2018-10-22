@@ -18,6 +18,7 @@ public class Vacina {
         this.descricao = descricao;
     }
 
+    
     public Vacina() {
     }
 
